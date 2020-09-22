@@ -40,9 +40,13 @@ document.addEventListener('DOMContentLoaded', function(){
   const hideBox = document.querySelector('#hide');
   hideBox.addEventListener('change', function(e){
     if(hideBox.checked){
-      list.style.display = "none";
+      list.style.visibility = "hidden";
+      // list.style.display = "none";
+      
     } else {
       list.style.display = "initial";
+      list.style.visibility = "visible";
+
     }
   });
 
@@ -53,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function(){
     const books = list.getElementsByTagName('li');
     Array.from(books).forEach((book) => {
       const title = book.firstElementChild.textContent;
-      if(title.toLowerCase().indexOf(e.target.value) != -1){
+      if(title.toLowerCase().indexOf(term) != -1){
         book.style.display = 'block';
       } else {
         book.style.display = 'none';

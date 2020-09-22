@@ -1,1 +1,1 @@
-# library
+# JavaScript library
